@@ -1,11 +1,11 @@
-function shortcut_normal()
+function Shortcut_normal()
 	noremap <C-E> $
 endfunction
 
-function shortcut_insert()
+function Shortcut_insert()
 	inoremap <C-E> <esc> $i <Right>
 endfunction
 
-function shortcut_virtual()
+function Shortcut_virtual()
 	vnoremap <C-E> $
 endfunction
