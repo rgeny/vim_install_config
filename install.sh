@@ -29,7 +29,7 @@ NEWCPP="alias newcpp=\"mkdir includes srcs class && touch Makefile srcs/main.cpp
 add_cmd_zshrc "$NEWCPP"
 add_cmd_bashrc "$NEWCPP"
 
-NEWCPPCLASS="alias newcppclass='function _newclass(){for i in \$@ do mkdir \"srcs/\$i\";vim \"class/\$i.hpp\";vim \"srcs/\$i/\$i.structor.cpp\";	vim \"srcs/\$i/\$i.member.cpp\";vim \"srcs/\$i/\$i.operator.cpp\";vim \"srcs/\$i/\$i.accessor.cpp\";done};_newclass'"
+NEWCPPCLASS="alias newcppclass='function _newclass(){for i in \$@;do mkdir \"srcs/\$i\";vim \"class/\$i.hpp\";vim \"srcs/\$i/\$i.structor.cpp\";vim \"srcs/\$i/\$i.member.cpp\";vim \"srcs/\$i/\$i.operator.cpp\";vim \"srcs/\$i/\$i.accessor.cpp\";done};_newclass'"
 add_cmd_zshrc "$NEWCPPCLASS"
 add_cmd_bashrc "$NEWCPPCLASS"
 
