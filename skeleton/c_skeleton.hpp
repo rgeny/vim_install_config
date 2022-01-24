@@ -9,5 +9,10 @@ class c_skeleton
 		~c_skeleton	(void);
 
 		c_skeleton &	operator=	(c_skeleton & src);
+
+	protected:
+
+	private:
+
 };
 #endif
