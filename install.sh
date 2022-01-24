@@ -24,9 +24,15 @@ function add_cmd_bashrc()
 		echo "$1" >> $BASHRC
 	fi
 }
-NEWCPP="alias makecpp=\"mkdir includes srcs class && touch Makefile srcs/main.cpp\""
+
+NEWCPP="alias newcpp=\"mkdir includes srcs class && touch Makefile srcs/main.cpp\""
 add_cmd_zshrc "$NEWCPP"
 add_cmd_bashrc "$NEWCPP"
-NEWC="alias makec=\"mkdir includes srcs && touch Makefile srcs/main.cpp\""
+
+NEWCPPCLASS="alias newcppclass='function _newclass(){echo \"abc\$1\"; mkdir \"srcs/\$1\" && touch \"class/\$1.hpp\" \"srcs/\$1/\$1_structor.cpp\" \"srcs/\$1/\$1_member.cpp\" \"srcs/\$1/\$1_operator.cpp\" \"srcs/\$1/\$1_accessor.cpp\" };_newclass'"
+add_cmd_zshrc "$NEWCPPCLASS"
+add_cmd_bashrc "$NEWCPPCLASS"
+
+NEWC="alias newc=\"mkdir includes srcs && touch Makefile srcs/main.cpp\""
 add_cmd_zshrc "$NEWC"
 add_cmd_bashrc "$NEWC"
