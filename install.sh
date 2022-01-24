@@ -24,9 +24,9 @@ function add_cmd_bashrc()
 		echo "$1" >> $BASHRC
 	fi
 }
-MAKECPP="alias makecpp=\"mkdir includes srcs class && touch Makefile srcs/main.cpp\""
-add_cmd_zshrc "$MAKECPP"
-add_cmd_bashrc "$MAKECPP"
-MAKEC="alias makec=\"mkdir includes srcs && touch Makefile srcs/main.cpp\""
-add_cmd_zshrc "$MAKEC"
-add_cmd_bashrc "$MAKECPP"
+NEWCPP="alias makecpp=\"mkdir includes srcs class && touch Makefile srcs/main.cpp\""
+add_cmd_zshrc "$NEWCPP"
+add_cmd_bashrc "$NEWCPP"
+NEWC="alias makec=\"mkdir includes srcs && touch Makefile srcs/main.cpp\""
+add_cmd_zshrc "$NEWC"
+add_cmd_bashrc "$NEWC"
