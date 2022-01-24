@@ -1,7 +1,7 @@
 NEW_DIR				= mkdir -p
 DEL_DIR				= rm -rf
 
-CC					= cc
+CC					= clang++
 COMPILE_FLAG		= $(DEPS_FLAG) -std=c++98 -Wall -Werror -Wextra
 DEPS_FLAG			= -MMD
 INCLUDES_FLAG		= -I$(INCLUDES_DIR) -I$(CLASS_DIR)

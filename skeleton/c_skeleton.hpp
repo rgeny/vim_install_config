@@ -1,5 +1,6 @@
 #ifndef C_SKELETON_HPP
 # define C_SKELETON_HPP
+# include <iostream>
 
 class c_skeleton
 {

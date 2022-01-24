@@ -22,6 +22,14 @@ function _cpp_new_i_hpp()
 	autocmd BufNewFile i_*.hpp	wq
 endfunction
 
+function _cpp_new_t_hpp()
+	autocmd BufNewFile t_*.hpp	0r ~/.vim/skeleton/t_skeleton.hpp
+	autocmd BufNewFile t_*.hpp	%s/T_SKELETON/\=toupper(expand('%:t:r'))/g
+	autocmd BufNewFile t_*.hpp	%s/t_skeleton/\=expand('%:t:r')/g
+	autocmd BufNewFile t_*.hpp	Stdheader
+	autocmd BufNewFile t_*.hpp	wq
+endfunction
+
 function _cpp_new_c_structor_cpp()
 	autocmd BufNewFile *.structor.cpp	0r ~/.vim/skeleton/skeleton.structor.cpp
 	autocmd BufNewFile *.structor.cpp	%s/skeleton/\=expand('%:t:r:r')/g
