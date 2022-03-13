@@ -12,8 +12,8 @@ SRCS_DIR			= srcs/
 
 VPATH				= $(SRCS_DIR)
 
-SRCS				= $(addsuffix .cpp,		main)
-OBJS				= $(patsubst %.cpp, $(OBJS_DIR)%.o, $(SRCS))
+SRCS				= $(addsuffix .c,		main)
+OBJS				= $(patsubst %.c, $(OBJS_DIR)%.o, $(SRCS))
 DEPS				= $(OBJS:.o=.d)
 
 EXE					= exe
@@ -23,7 +23,7 @@ all					: $(EXE)
 $(EXE)				: $(OBJS)
 					$(CC) $(COMPILE_FLAG) $^ -o $@
 
-$(OBJS_DIR)%.o		: %.cpp
+$(OBJS_DIR)%.o		: %.c
 					$(NEW_DIR) $(OBJS_DIR)
 					$(CC) $(COMPILE_FLAG) -c $< $(INCLUDES_FLAG) -o $@
 
