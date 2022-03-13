@@ -26,12 +26,6 @@ call	Shortcut_insert()
 call	Shortcut_virtual()
 
 source ~/.vim/function/new_files_cpp.vimrc
-call _cpp_new_c_hpp()
-call _cpp_new_a_hpp()
-call _cpp_new_i_hpp()
-call _cpp_new_t_hpp()
-if _cpp_new_c_operator_cpp()
-	if _cpp_new_c_structor_cpp()
-		call _cpp_new_c___cpp()
-	endif
+if _cpp_hpp() && _cpp_structor() && _cpp_operator()
+	call _cpp_other()
 endif

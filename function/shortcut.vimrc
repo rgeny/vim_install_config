@@ -7,6 +7,7 @@ function Shortcut_normal()
 	noremap <C-c> y
 	noremap <C-v> p
 	noremap <C-x> d
+	noremap <C-y> <C-r>
 endfunction
 
 function Shortcut_insert()
