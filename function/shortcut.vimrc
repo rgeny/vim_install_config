@@ -1,5 +1,4 @@
 function Shortcut_normal()
-	noremap <right> <Nop>
 	noremap <C-O> :s/^/\/\/<CR>:noh<CR>
 	noremap <C-P> :s/\/\///<CR>:noh<CR>
 	noremap <C-E> $

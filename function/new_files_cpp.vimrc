@@ -3,7 +3,7 @@ function _cpp_hpp()
 	autocmd BufNewFile *.hpp	%s/SKELETON/\=toupper(expand('%:t:r'))/g
 	autocmd	BufNewFile *.hpp	%s/skeleton/\=expand('%:t:r')/g
 	autocmd BufNewFile *.hpp	Stdheader
-	autocmd	BufNewFile *.hpp	16
+	autocmd	BufNewFile *.hpp	25
 	if expand('%:t:e:e') == ".hpp"
 		return 0
 	endif
