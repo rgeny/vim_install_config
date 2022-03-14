@@ -1,3 +1,5 @@
+
+
 set autoindent
 set mouse=a
 set linebreak
@@ -19,6 +21,8 @@ endw
 set timeout ttimeoutlen=50
 
 source ~/.vim/function/make.vimrc
+call _make_cpp()
+call _make_c()
 
 source ~/.vim/function/shortcut.vimrc
 call	Shortcut_normal()
@@ -29,3 +33,4 @@ source ~/.vim/function/new_files_cpp.vimrc
 if _cpp_hpp() && _cpp_structor() && _cpp_operator()
 	call _cpp_other()
 endif
+

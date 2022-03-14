@@ -1,8 +1,12 @@
-function Make_c()
-	0r ~/.vim/skeleton/make_c
+function _make_c()
+	autocmd BufNewFile makec :e Makefile
+	autocmd BufNewFile makec 0r ~/.vim/skeleton/make_c
+	autocmd BufNewFile Makefile :w
 endfunction
 
-function Make_cpp()
-	0r ~/.vim/skeleton/make_cpp
+function _make_cpp()
+	autocmd BufNewFile makecpp :e Makefile
+	autocmd BufNewFile makecpp 0r ~/.vim/skeleton/make_cpp
+	autocmd BufNewFile makecpp :Stdheader
+	autocmd BufNewFile makecpp :w
 endfunction
-
