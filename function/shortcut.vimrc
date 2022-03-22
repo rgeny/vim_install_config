@@ -1,5 +1,5 @@
 function Shortcut_normal()
-	noremap <C-O> :s/^/\/\/<CR>:noh<CR>
+	noremap <C-O> :s/\/\/\\|^/\/\/<CR>:noh<CR>
 	noremap <C-P> :s/\/\///<CR>:noh<CR>
 	noremap <C-E> $
 	noremap <C-A> ^
@@ -17,8 +17,8 @@ function Shortcut_insert()
 	inoremap <C-j> <down>
 	inoremap <C-k> <up>
 	inoremap <C-l> <right>
-	inoremap <C-O> <esc>:s/^/\/\/<CR>:noh<CR>i
-	inoremap <C-P> <esc>:s/\/\///<CR>:noh<CR>i
+	inoremap <C-O> <esc>:s/\/\/\\|^/\/\/<CR>:noh<CR>i
+	inoremap <C-P> <esc>:s/\/\/\\|^//<CR>:noh<CR>i
 	inoremap <C-E> <esc>$i<Right>
 	inoremap <C-A> <esc>^i
 	inoremap <A-q> <esc>:q<CR>
@@ -30,8 +30,8 @@ function Shortcut_insert()
 endfunction
 
 function Shortcut_virtual()
-	vnoremap <C-O> :s/^/\/\/<CR>:noh<CR>
-	vnoremap <C-P> :s/\/\///<CR>:noh<CR>
+	vnoremap <C-O> :s/\/\/\\|^/\/\/<CR>:noh<CR>
+	vnoremap <C-P> :s/\/\/\\|^//<CR>:noh<CR>
 	vnoremap <C-E> $
 	vnoremap <C-A> ^
 	vnoremap <A-q> <esc>:q<CR>
