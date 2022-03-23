@@ -8,8 +8,12 @@ OPT_LIST=$*
 
 function get_opt()
 {
-	if [ "$OPT_LIST" == "" ] || [ "$*" == "" ]
+	if [ "$OPT_LIST" == "" ]
 	then
+		if [ "$*" == "" ]
+		then
+			return 1
+		fi
 		return 0
 	fi
 	for i in $OPT_LIST
@@ -33,7 +37,9 @@ then
 	echo "	--verbose (-v)"
 	echo "	--stop (-s)"
 	echo "tests options :"
-
+	echo "	vector"
+	echo "	map"
+	echo "	stack"
 	exit
 fi
 
