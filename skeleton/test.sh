@@ -33,9 +33,7 @@ then
 	echo "	--verbose (-v)"
 	echo "	--stop (-s)"
 	echo "tests options :"
-	echo "	vector"
-	echo "	map"
-	echo "	stack"
+
 	exit
 fi
 
