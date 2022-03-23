@@ -44,7 +44,7 @@ function Shortcut_commentary()
 		nnoremap <C-P> :s/\/\/\\|^//<CR>:noh<CR>
 		inoremap <C-P> <esc>:s/\/\/\\|^//<CR>:noh<CR>i
 		vnoremap <C-P> :s/\/\/\\|^//<CR>:noh<CR>v
-	elseif expand('%:e')=="sh" || expand('%')==".sh"
+	elseif expand('%:e')=="sh" || expand('%')==".sh" || expand('%')=="Makefile"
 		nnoremap <C-O> :s/\#\\|^/\#/<CR>:noh<CR>
 		inoremap <C-O> <esc>:s/\#\\|^/\#/<CR>:noh<CR>i
 		vnoremap <C-O> :s/\#\\|^/\#/<CR>:noh<CR>v
