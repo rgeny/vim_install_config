@@ -1,7 +1,8 @@
 function _make_c()
 	autocmd BufNewFile makec :e Makefile
 	autocmd BufNewFile makec 0r ~/.vim/skeleton/make_c
-	autocmd BufNewFile Makefile :w
+	autocmd BufNewFile makec :Stdheader
+	autocmd BufNewFile makec :w
 endfunction
 
 function _make_cpp()
