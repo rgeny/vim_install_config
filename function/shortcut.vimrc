@@ -37,7 +37,7 @@ function Shortcut_virtual()
 endfunction
 
 function Shortcut_commentary()
-	if expand('%:e')=="c" || expand('%:e')=="cpp" || expand('%')==".c" || expand('%')==".cpp"
+	if (expand('%:e')=="c" || expand('%:e')=="cpp" || expand('%:e')=="h" || expand('%:e')=="hpp" || expand('%')==".c" || expand('%')==".cpp")
 		nnoremap <C-O> :s/\/\/\\|^/\/\/<CR>:noh<CR>
 		inoremap <C-O> <esc>:s/\/\/\\|^/\/\/<CR>:noh<CR>i
 		vnoremap <C-O> :s/\/\/\\|^/\/\/<CR>:noh<CR>v
