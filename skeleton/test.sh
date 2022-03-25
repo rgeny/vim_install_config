@@ -145,34 +145,34 @@ function	test()
 	if [ "$RESEARCH" != "$RESULT" ]
 	then
 		mkdir -p $TEST_DIR 
-		echo $RESULT > $TEST_DIR/$LOG_RESULT
-		echo $RESEARCH > $TEST_DIR/$LOG_RESEARCH
-		echo $TEST > $TEST_DIR/$LOG_TEST
+		echo "$RESULT" > $TEST_DIR/$LOG_RESULT
+		echo "$RESEARCH" > $TEST_DIR/$LOG_RESEARCH
+		echo "$TEST" > $TEST_DIR/$LOG_TEST
 	
 		printf $BLUE"TEST\n"
-		printf $TEST$WHITE
+		printf "$TEST"$WHITE
 		printf $GREEN"\nRESEARCH\n"
-		printf $RESEARCH$WHITE
+		printf "$RESEARCH"$WHITE
 		printf $RED"\nRESULT\n"
-		printf $RESULT$WHITE
+		printf "$RESULT"$WHITE
 		if [ "$STOP" == "1" ]
 		then
 			exit
 		fi
 	else
-		printf $1$GREEN": Ok"$WHITE"\n"
+		printf "$1"$GREEN": Ok"$WHITE"\n"
 		
 		if [ "$VERBOSE" == "1" ]
 		then
 			mkdir -p $TEST_DIR
-			echo $RESULT > $TEST_DIR/$LOG_RESULT
-			echo $RESEARCH > $TEST_DIR/$LOG_RESEARCH
-			echo $TEST > $TEST_DIR/$LOG_TEST
+			echo "$RESULT" > $TEST_DIR/$LOG_RESULT
+			echo "$RESEARCH" > $TEST_DIR/$LOG_RESEARCH
+			echo "$TEST" > $TEST_DIR/$LOG_TEST
 
 			printf $BLUE"TEST\n"
-			printf $TEST$WHITE
+			printf "$TEST"$WHITE
 			printf $GREEN"\nRESULT\n"
-			printf $RESULT$WHITE
+			printf "$RESULT"$WHITE
 
 		fi
 	fi
