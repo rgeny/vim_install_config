@@ -1,6 +1,16 @@
 #!/bin/bash
 
 ###############################################
+##################### LOGS ####################
+###############################################
+
+LOGS_DIR=log/
+mkdir -p $LOGS_DIR
+CUR_LOGS_DIR=$LOGS_DIR$(data +"%F_%T")
+mkdir $CUR_LOGS_DIR
+
+
+###############################################
 ##################### OPT #####################
 ###############################################
 
@@ -36,10 +46,15 @@ then
 	echo "	--help (-h)"
 	echo "	--verbose (-v)"
 	echo "	--stop (-s)"
+	echo "	--logclean (-lc)"
 	echo "tests options :"
-	echo "	vector"
-	echo "	map"
-	echo "	stack"
+	exit
+fi
+
+get_opt "-lc" "--logclean"
+if [ "$?" == "1" ]
+then
+	rm -rf $LOGS_DIR
 	exit
 fi
 
