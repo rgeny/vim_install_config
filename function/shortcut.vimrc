@@ -4,9 +4,6 @@ function Shortcut_normal()
 	nnoremap <A-q> :q<CR>
 	nnoremap <A-w> :wq<CR>
 	nnoremap <A-s> :w<CR>
-	nnoremap <C-c> yy
-	nnoremap <C-v> p
-	nnoremap <C-x> dd
 	nnoremap <C-y> <C-r>
 endfunction
 
@@ -20,9 +17,6 @@ function Shortcut_insert()
 	inoremap <A-q> <esc>:q<CR>
 	inoremap <A-w> <esc>:wq<CR>
 	inoremap <A-s> <esc>:w<CR>i
-	inoremap <C-c> <esc>yyi
-	inoremap <C-v> <esc>pi
-	inoremap <C-x> <esc>ddi
 endfunction
 
 function Shortcut_virtual()
@@ -31,9 +25,6 @@ function Shortcut_virtual()
 	vnoremap <A-q> <esc>:q<CR>
 	vnoremap <A-w> <esc>:wq<CR>
 	vnoremap <A-s> <esc>:w<CR>v
-	vnoremap <C-c> yy
-	vnoremap <C-v> p
-	vnoremap <C-x> dd
 endfunction
 
 function Shortcut_commentary()
