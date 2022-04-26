@@ -9,6 +9,7 @@ cp -r skeleton ~/.vim/
 function add_cmd_zshrc()
 {
 	ZSHRC=~/.zshrc
+	touch $ZSHRC
 	ARG=$(cat $ZSHRC | grep "$*")
 	if [ "$ARG" != "$*" ]
 	then
@@ -18,6 +19,7 @@ function add_cmd_zshrc()
 function add_cmd_bashrc()
 {
 	BASHRC=~/.bashrc
+	touch $BASHRC
 	ARG=$(cat $BASHRC | grep "$*")
 	if [ "$ARG" != "$*" ]
 	then
