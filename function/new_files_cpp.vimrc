@@ -37,6 +37,7 @@ function _cpp_other()
 endfunction
 
 function _cpp_main()
-	autocmd BufNewFile main.cpp 0r ~/.vim/skeleton/main.cpp
-	autocmd BufNewFile main.cpp Stdheader
+	autocmd BufNewFile main.c* 0r ~/.vim/skeleton/main.cpp
+	autocmd BufNewFile main.c* Stdheader
+	autocmd BufNewFile main.c* 18
 endfunction
