@@ -35,3 +35,8 @@ function _cpp_other()
 	autocmd BufNewFile *.*.cpp	%s/skeleton/\=expand('%:t:r:r')/g
 	autocmd BufNewFile *.*.cpp	Stdheader
 endfunction
+
+function _cpp_main()
+	autocmd BufNewFile main.cpp 0r ~/.vim/skeleton/main.cpp
+	autocmd BufNewFile main.cpp Stdheader
+endfunction
