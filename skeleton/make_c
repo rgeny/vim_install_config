@@ -2,9 +2,11 @@ NEW_DIR				= mkdir -p
 DEL_DIR				= rm -rf
 
 CC					= cc
-COMPILE_FLAG		= $(DEPS_FLAG) -Wall -Werror -Wextra
+VALGRIND			= valgrind
+COMPILE_FLAG		= $(DEPS_FLAG) -Wall -Wextra -Werror
 DEPS_FLAG			= -MMD
 INCLUDES_FLAG		= -I$(INCLUDES_DIR)
+VALGRIND_FLAG		= --leak-check=full --show-leak-kinds=all --track-fds=yes
 
 INCLUDES_DIR		= includes/
 OBJS_DIR			= objs/
@@ -33,8 +35,13 @@ clean				:
 fclean				: clean
 					$(DEL_DIR) $(EXE)
 
-re					: fclean all
+re					:
+					make fclean
+					make
+
+valgrind			: all
+					$(VALGRIND) $(VALGRIND_FLAG) ./$(EXE) $(ARG)
 
 -include			$(DEPS)
 
-.PHONY				: all clean fclean re
+.PHONY				: all clean fclean re valgrind
