@@ -6,14 +6,14 @@ class skeleton
 {
 	public:
 		skeleton	(void);
-		skeleton	(skeleton & src);
+		skeleton	(skeleton const & src);
 		~skeleton	(void);
 
-		skeleton &	operator=	(skeleton & src);
+		skeleton &	operator=	(skeleton const & src);
 
 	private:
 };
 
 std::ostream &	operator<<	(std::ostream & os
-							,skeleton & src);
+							,skeleton const & src);
 #endif

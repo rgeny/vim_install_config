@@ -6,7 +6,7 @@ skeleton:: skeleton	(void)
 				<< std::endl;
 }
 
-skeleton:: skeleton	(skeleton & src)
+skeleton:: skeleton	(skeleton const & src)
 {
 	(void)src;
 	std::cout	<< "skeleton cpy constructor."
