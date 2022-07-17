@@ -12,9 +12,9 @@ class skeleton
 
 		skeleton &	operator=	(skeleton const & src);
 
+//		void	print_data	(void) const;
+
 	private:
 };
 
-std::ostream &	operator<<	(std::ostream & os
-							,skeleton const & src);
 #endif
