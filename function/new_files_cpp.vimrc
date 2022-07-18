@@ -30,14 +30,20 @@ function _cpp_operator()
 	return 1
 endfunction
 
+function _cpp_main()
+	autocmd BufNewFile main.cpp 0r ~/.vim/skeleton/main.cpp
+	autocmd BufNewFile main.c 0r ~/.vim/skeleton/main.c
+	autocmd BufNewFile main.c* Stdheader
+	autocmd BufNewFile main.c* 18
+	if expand('%')=="main.c" || expand('%')=="main.cpp"
+		return 0
+	endif
+	return 1
+endfunction
+
 function _cpp_other()
 	autocmd BufNewFile *.*.cpp	0r ~/.vim/skeleton/skeleton..cpp
 	autocmd BufNewFile *.*.cpp	%s/skeleton/\=expand('%:t:r:r')/g
 	autocmd BufNewFile *.*.cpp	Stdheader
 endfunction
 
-function _cpp_main()
-	autocmd BufNewFile main.c* 0r ~/.vim/skeleton/main.cpp
-	autocmd BufNewFile main.c* Stdheader
-	autocmd BufNewFile main.c* 18
-endfunction
