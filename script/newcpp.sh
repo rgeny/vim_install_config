@@ -89,13 +89,17 @@ fi
 INC_DIR=$ROOT"includes/"
 CLASS_DIR=$INC_DIR"class/"
 DEFINE_DIR=$INC_DIR"defines/"
+FUNCTION_DIR=$INC_DIR"functions/"
 SRCS_DIR=$ROOT"srcs/"
 MAKEFILE=$ROOT"makecpp"
 MAIN_FILE=$SRCS_DIR"main.cpp"
 
+FNX_CPP_REPO=git@github.com:rgeny/fnx_cpp.git
+
 #	CMD
 NEW_DIR="mkdir -p"
 NEW_FILE="vim -c wq"
+CLONE="git clone"
 
 ############################################################
 ########################## PROG ############################
@@ -104,7 +108,10 @@ NEW_FILE="vim -c wq"
 $NEW_DIR $INC_DIR
 $NEW_DIR $CLASS_DIR
 $NEW_DIR $DEFINE_DIR
+$NEW_DIR $FUNCTION_DIR
 $NEW_DIR $SRCS_DIR
 $NEW_FILE $MAKEFILE
 mv Makefile $ROOT
 $NEW_FILE $MAIN_FILE
+
+$CLONE $FNX_CPP_REPO
