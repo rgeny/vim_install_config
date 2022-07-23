@@ -60,19 +60,18 @@ WHITE2_BACK="\033[107m"
 
 
 ############################################################
-####################### CHECK ERROR ########################
+###################### CHECK ERROR #########################
 ############################################################
 
-if (( $# < 2 ))
+if (( $# > 1 ))
 then
-	printf $RED"Program requires 2+ arguments :\n"$RESET
-	printf "./newcppclass.sh [path_to_program_root] *[class_name]\n"
-	exit
+	printf $RED"Program requires 1- argument :\n"$RESET
+	printf "./newcpp.sh ![path_to_program_root]\n"
+	exit 1
 fi
 
-
 ############################################################
-########################### ARGS ###########################
+########################## ARGS ############################
 ############################################################
 
 #	ARGS
@@ -80,49 +79,32 @@ N_ARGS=$#
 ARGS=$*
 
 #	VARS
-ROOT=$1
+if (( $# == 1 ))
+then
+	ROOT=$1
+else
+	ROOT="./"
+fi
+
 INC_DIR=$ROOT"includes/"
 CLASS_DIR=$INC_DIR"class/"
+DEFINE_DIR=$INC_DIR"defines/"
 SRCS_DIR=$ROOT"srcs/"
-HPP_SUFFIX=".hpp"
-CPP_SUFFIX=".cpp"
-FILES_SUFFIX=".operator .structor .member .accessor"
+MAKEFILE=$ROOT"makecpp"
+MAIN_FILE=$SRCS_DIR"main.cpp"
 
 #	CMD
 NEW_DIR="mkdir -p"
 NEW_FILE="vim -c wq"
 
-
 ############################################################
-########################### PROG ###########################
+########################## PROG ############################
 ############################################################
 
-
-function	create_files()
-{
-	if (( $# != 1 ))
-	then
-		printf $RED"create_files function requires only one argument :\n"$RESET
-		printf "create_files [class_name]\n"
-		exit 1
-	fi
-
-	$NEW_DIR $SRCS_DIR$1
-	$NEW_FILE $CLASS_DIR$1$HPP_SUFFIX
-	for i in $FILES_SUFFIX
-	do
-		$NEW_FILE $SRCS_DIR$1"/"$1$i$CPP_SUFFIX
-	done
-}
-
-BOOL=0
-for i in $ARGS
-do
-	if (( $BOOL == 0 ))
-	then
-		newcpp $ROOT
-		BOOL=1
-	else
-		create_files $i
-	fi
-done
+$NEW_DIR $INC_DIR
+$NEW_DIR $CLASS_DIR
+$NEW_DIR $DEFINE_DIR
+$NEW_DIR $SRCS_DIR
+$NEW_FILE $MAKEFILE
+mv Makefile $ROOT
+$NEW_FILE $MAIN_FILE

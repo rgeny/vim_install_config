@@ -99,6 +99,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias newcpp="mkdir includes includes/class includes/defines srcs; vim -c wq makecpp; vim -c wq srcs/main.cpp"
+alias newcpp="~/.script/newcppclass.sh"
 alias newc="mkdir includes srcs; vim -c wq makec; vim -c wq srcs/main.c"
 alias newcppclass="~/.script/newcppclass.sh"
