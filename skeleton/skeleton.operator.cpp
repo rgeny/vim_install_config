@@ -2,8 +2,6 @@
 
 skeleton &	skeleton::operator=	(skeleton const & src)
 {
-	if (*this == src)
-		return (*this);
 	return (*this);
 }
 
