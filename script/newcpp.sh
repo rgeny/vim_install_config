@@ -94,6 +94,7 @@ SRCS_DIR=$ROOT"srcs/"
 MAKEFILE=$ROOT"makecpp"
 MAIN_FILE=$SRCS_DIR"main.cpp"
 
+FNX_DIR=fnx_cpp/
 FNX_CPP_REPO=git@github.com:rgeny/fnx_cpp.git
 
 #	CMD
@@ -110,8 +111,16 @@ $NEW_DIR $CLASS_DIR
 $NEW_DIR $DEFINE_DIR
 $NEW_DIR $FUNCTION_DIR
 $NEW_DIR $SRCS_DIR
-$NEW_FILE $MAKEFILE
-mv Makefile $ROOT
+if [ ! -e $ROOT"Makefile" ]
+then
+	$NEW_FILE $MAKEFILE
+	mv Makefile $ROOT 2>/dev/null
+fi
+#	$NEW_FILE $MAKEFILE
+#mv Makefile $ROOT
 $NEW_FILE $MAIN_FILE
 
-$CLONE $FNX_CPP_REPO
+if [ ! -e $FNX_DIR ]
+then
+	$CLONE $FNX_CPP_REPO
+fi
