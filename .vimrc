@@ -18,20 +18,28 @@ while c < 'z'
 endw
 set timeout ttimeoutlen=50
 
-source ~/.vim/function/make.vimrc
-call _make_cpp()
-call _make_c()
-
 source ~/.vim/function/shortcut.vimrc
 call	Shortcut_normal()
 call	Shortcut_insert()
 call	Shortcut_virtual()
 call	Shortcut_commentary()
 
-source ~/.vim/function/new_files_cpp.vimrc
-if _cpp_hpp() && _cpp_structor() && _cpp_operator()
+
+"New cpp files
+source ~/.vim/function/new_files/cpp.vimrc
+if _cpp_structor() && _cpp_operator()
 	call _cpp_other()
 endif
+call _cpp_main()
+call _cpp_hpp()
 
-source ~/.vim/function/new_script.vimrc
-call _script_test()
+"New Makefile
+source ~/.vim/function/new_files/Makefile.vimrc
+call _make_cpp()
+call _make_c()
+
+"New bash script files
+source ~/.vim/function/new_files/bash.vimrc
+if _script_test()
+	call _script()
+endif
