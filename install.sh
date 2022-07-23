@@ -1,40 +1,44 @@
 #!/bin/bash
+#shopt -s expand_aliases
 
 ZSHRC_DIR=~/.zshrc
 
-cp .vimrc ~/
+cp -r vimrc ~/.vimrc
 cp -r function ~/.vim/
 cp -r skeleton ~/.vim/
+cp -r bashrc ~/.bashrc
+cp -r zshrc ~/.zshrc
 
-function add_cmd_zshrc()
-{
-	ZSHRC=~/.zshrc
-	touch $ZSHRC
-	ARG=$(cat $ZSHRC | grep "$*")
-	if [ "$ARG" != "$*" ]
-	then
-		echo "$*" >> $ZSHRC
-	fi
-}
-function add_cmd_bashrc()
-{
-	BASHRC=~/.bashrc
-	touch $BASHRC
-	ARG=$(cat $BASHRC | grep "$*")
-	if [ "$ARG" != "$*" ]
-	then
-		echo "$*" >> $BASHRC
-	fi
-}
+mkdir -p ~/.script
+cp -r script/* ~/.script/
 
-NEWCPP="alias newcpp=\"mkdir includes srcs class; touch Makefile srcs/main.cpp\""
-add_cmd_zshrc "$NEWCPP"
-add_cmd_bashrc "$NEWCPP"
-
-NEWC="alias newc=\"mkdir includes srcs; touch Makefile srcs/main.cpp\""
-add_cmd_zshrc "$NEWC"
-add_cmd_bashrc "$NEWC"
-
+#function add_cmd_zshrc()
+#{
+#	ZSHRC=~/.zshrc
+#	touch $ZSHRC
+#	ARG=$(cat $ZSHRC | grep "$*")
+#	if [ "$ARG" != "$*" ]
+#	then
+#		echo "$*" >> $ZSHRC
+#	fi
+#}
+#function add_cmd_bashrc()
+#{
+#	BASHRC=~/.bashrc
+#	touch $BASHRC
+#	ARG=$(cat $BASHRC | grep "$*")
+#	if [ "$ARG" != "$*" ]
+#	then
+#		echo "$*" >> $BASHRC
+#	fi
+#}
+#
+#NEWC="alias newc=\"mkdir includes srcs; touch Makefile srcs/main.cpp\""
+#add_cmd_zshrc "$NEWC"
+#add_cmd_bashrc "$NEWC"
+#
+#NEWCPPCLASS="
+#
 #HEADER="export USER=rgeny MAIL=rgeny@student.42.fr"
 #add_cmd_zshrc "$HEADER"
 #add_cmd_bashrc "$HEADER"
