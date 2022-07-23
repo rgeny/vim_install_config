@@ -51,7 +51,9 @@ clean				:
 fclean				: clean
 					$(DEL_DIR) $(EXE)
 
-re					: fclean all
+re					:
+					make fclean
+					make all
 
 valgrind			: all
 					$(VALGRIND) $(VALGRIND_FLAG) ./$(EXE) $(ARG)
