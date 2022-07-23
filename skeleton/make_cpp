@@ -4,14 +4,16 @@ DEL_DIR				= rm -rf
 CC					= c++
 VALGRIND			= valgrind
 COMPILE_FLAG		= $(DEPS_FLAG) -std=c++98 -Wall -Werror -Wextra
-DEPS_FLAG			= -MMD
+DEPS_FLAG			= -MMD -MP
 INCLUDES_FLAG		= -I$(INCLUDES_DIR) -I$(CLASS_DIR)
 VALGRIND_FLAG		= --leak-check=full --show-leak-kinds=all --track-fds=yes
+MAKE_OTHER_DIR		= make -C
 
 INCLUDES_DIR		= includes/
 CLASS_DIR			= class/
 OBJS_DIR			= objs/
 SRCS_DIR			= srcs/
+FNX_DIR				= fnx_cpp/
 
 VPATH				= $(SRCS_DIR)
 
@@ -22,11 +24,15 @@ OBJS				= $(patsubst %.cpp, $(OBJS_DIR)%.o, $(SRCS))
 DEPS				= $(OBJS:.o=.d)
 
 EXE					= exe
+FNX_LIB				= fnxlib.a
 
-all					: $(EXE)
+all					: $(FNX_LIB) $(EXE)
+
+$(FNX_LIB)			:
+					$(MAKE_OTHER_DIR) $(FNX_DIR)
 
 $(EXE)				: $(OBJS)
-					$(CC) $(COMPILE_FLAG) $^ -o $@
+					$(CC) $(COMPILE_FLAG) $^ $(FNX_DIR)$(FNX_LIB) -o $@
 
 $(OBJS_DIR)%.o		: %.cpp
 					$(NEW_DIR) $(OBJS_DIR)

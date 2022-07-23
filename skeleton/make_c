@@ -4,7 +4,7 @@ DEL_DIR				= rm -rf
 CC					= cc
 VALGRIND			= valgrind
 COMPILE_FLAG		= $(DEPS_FLAG) -Wall -Wextra -Werror
-DEPS_FLAG			= -MMD
+DEPS_FLAG			= -MMD -MP
 INCLUDES_FLAG		= -I$(INCLUDES_DIR)
 VALGRIND_FLAG		= --leak-check=full --show-leak-kinds=all --track-fds=yes
 
