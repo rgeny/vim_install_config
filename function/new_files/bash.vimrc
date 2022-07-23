@@ -6,7 +6,7 @@
 "    By: rgeny <rgeny@student.42.fr>                +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2022/03/23 14:10:52 by rgeny             #+#    #+#              "
-"    Updated: 2022/07/23 10:17:20 by rgeny            ###   ########.fr        "
+"    Updated: 2022/07/23 10:53:59 by rgeny            ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -20,5 +20,5 @@ endfunction
 
 function _script()
 	autocmd BufNewFile *.sh 0r ~/.vim/skeleton/skeleton.sh
-	autocmd BufNewFile *.sh 3
+	autocmd BufNewFile *.sh 64
 endfunction
