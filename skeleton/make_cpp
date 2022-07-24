@@ -9,6 +9,7 @@ INCLUDES_FLAG		= $(addprefix -I,	$(INCLUDES_DIR) \
 										$(CLASS_DIR) \
 										$(DEFINES_DIR) \
 										$(FUNCTIONS_DIR) \
+										$(TEMPLATES_DIR) \
 										$(FNX_HEADER_DIR))
 VALGRIND_FLAG		= --leak-check=full --show-leak-kinds=all --track-fds=yes
 MAKE_OTHER_DIR		= make -C
@@ -20,6 +21,7 @@ INCLUDES_DIR		= includes/
 CLASS_DIR			= $(INCLUDES_DIR)class/
 DEFINES_DIR			= $(INCLUDES_DIR)defines/
 FUNCTIONS_DIR		= $(INCLUDES_DIR)functions/
+TEMPLATES_DIR		= $(TEMPLATES_DIR)templates/
 FNX_HEADER_DIR		= $(FNX_DIR)$(INCLUDES_DIR)
 
 VPATH				= $(SRCS_DIR)
