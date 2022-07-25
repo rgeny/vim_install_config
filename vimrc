@@ -27,7 +27,7 @@ call	Shortcut_commentary()
 
 "New cpp files
 source ~/.vim/function/new_files/cpp.vimrc
-if _cpp_structor() && _cpp_operator()
+if _cpp_structor() && _cpp_operator() && _cpp_member()
 	call _cpp_other()
 endif
 call _cpp_main()

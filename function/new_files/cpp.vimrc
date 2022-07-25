@@ -30,6 +30,16 @@ function _cpp_operator()
 	return 1
 endfunction
 
+function _cpp_member()
+	autocmd BufNewFile *.member.cpp	0r ~/.vim/skeleton/skeleton.member.cpp
+	autocmd BufNewFile *.member.cpp	%s/skeleton/\=expand('%:t:r:r')/g
+	autocmd BufNewFile *.member.cpp	Stdheader
+	if expand('%:t:e:e')=="member.cpp"
+		return 0
+	endif
+	return 1
+endfunction
+
 function _cpp_main()
 	autocmd BufNewFile main.cpp 0r ~/.vim/skeleton/main.cpp
 	autocmd BufNewFile main.c 0r ~/.vim/skeleton/main.c

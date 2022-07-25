@@ -12,7 +12,7 @@ class skeleton
 
 		skeleton &	operator=	(skeleton const & src);
 
-//		void	print_data	(void) const;
+		void	print_data	(void) const;
 
 	private:
 };
