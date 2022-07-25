@@ -3,7 +3,7 @@ DEL_DIR				= rm -rf
 
 CC					= c++
 VALGRIND			= valgrind
-COMPILE_FLAG		= $(DEPS_FLAG) -std=c++98 -Wall -Werror -Wextra
+COMPILE_FLAG		= $(DEPS_FLAG) -std=c++98 -Wall -Werror -Wextra -g
 DEPS_FLAG			= -MMD -MP
 INCLUDES_FLAG		= $(addprefix -I,	$(INCLUDES_DIR) \
 										$(CLASS_DIR) \
