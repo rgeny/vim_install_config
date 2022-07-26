@@ -1,59 +1,33 @@
-function _cpp_hpp()
-	autocmd BufNewFile *.hpp	0r ~/.vim/skeleton/skeleton.hpp
-	autocmd BufNewFile *.hpp	%s/SKELETON/\=toupper(expand('%:t:r'))/g
-	autocmd	BufNewFile *.hpp	%s/skeleton/\=expand('%:t:r')/g
-	autocmd BufNewFile *.hpp	Stdheader
-	autocmd	BufNewFile *.hpp	26
-	if expand('%:t:e:e') == ".hpp"
-		return 0
+" **************************************************************************** "
+"                                                                              "
+"                                                         :::      ::::::::    "
+"    cpp.vimrc                                          :+:      :+:    :+:    "
+"                                                     +:+ +:+         +:+      "
+"    By: rgeny <marvin@42.fr>                       +#+  +:+       +#+         "
+"                                                 +#+#+#+#+#+   +#+            "
+"    Created: 2022/07/26 12:32:34 by rgeny             #+#    #+#              "
+"    Updated: 2022/07/26 12:32:35 by rgeny            ###   ########.fr        "
+"                                                                              "
+" **************************************************************************** "
+
+function _cpp_and_hpp()
+	if expand ('%:t:e:e:e')=="hpp"
+		autocmd BufNewFile *	0r ~/.vim/skeleton/skeleton.hpp
+	elseif expand ('%:t:e:e')=="structor.cpp"
+		autocmd BufNewfile *	0r ~/.vim/skeleton/skeleton.structor.cpp
+	elseif expand ('%:t:e:e')=="operator.cpp"
+		autocmd BufNewfile *	0r ~/.vim/skeleton/skeleton.operator.cpp
+	elseif expand ('%:t:e:e')=="member.cpp"
+		autocmd BufNewfile *	0r ~/.vim/skeleton/skeleton.member.cpp
+	elseif expand ('%:t')=="main.c"
+		autocmd BufNewfile *	0r ~/.vim/skeleton/main.c
+	elseif expand ('%:t')=="main.cpp"
+		autocmd BufNewfile *	0r ~/.vim/skeleton/main.cpp
+	else
+		autocmd BufNewfile *.*.cpp	0r ~/.vim/skeleton/skeleton..cpp
 	endif
-	return 1
-endfunction
-
-function _cpp_structor()
-	autocmd BufNewFile *.structor.cpp	0r ~/.vim/skeleton/skeleton.structor.cpp
-	autocmd BufNewFile *.structor.cpp	%s/skeleton/\=expand('%:t:r:r')/g
-	autocmd BufNewFile *.structor.cpp	Stdheader
-	if expand('%:t:e:e')=="structor.cpp"
-		return 0
+	if expand ('%:t:e:e')=="*.hpp" || expand ('%:t:e:e')=="*.cpp"
+		autocmd BufNewfile *	%s/SKELETON/\=toupper(expand('%:t:r'))/g
+		autocmd BufNewFile *	%s/skeleton/\=expand('%:t:r')/g
 	endif
-	return 1
 endfunction
-
-function _cpp_operator()
-	autocmd BufNewFile *.operator.cpp	0r ~/.vim/skeleton/skeleton.operator.cpp
-	autocmd BufNewFile *.operator.cpp	%s/skeleton/\=expand('%:t:r:r')/g
-	autocmd BufNewFile *.operator.cpp	Stdheader
-	if expand('%:t:e:e')=="operator.cpp"
-		return 0
-	endif
-	return 1
-endfunction
-
-function _cpp_member()
-	autocmd BufNewFile *.member.cpp	0r ~/.vim/skeleton/skeleton.member.cpp
-	autocmd BufNewFile *.member.cpp	%s/skeleton/\=expand('%:t:r:r')/g
-	autocmd BufNewFile *.member.cpp	Stdheader
-	if expand('%:t:e:e')=="member.cpp"
-		return 0
-	endif
-	return 1
-endfunction
-
-function _cpp_main()
-	autocmd BufNewFile main.cpp 0r ~/.vim/skeleton/main.cpp
-	autocmd BufNewFile main.c 0r ~/.vim/skeleton/main.c
-	autocmd BufNewFile main.c* Stdheader
-	autocmd BufNewFile main.c* 18
-	if expand('%')=="main.c" || expand('%')=="main.cpp"
-		return 0
-	endif
-	return 1
-endfunction
-
-function _cpp_other()
-	autocmd BufNewFile *.*.cpp	0r ~/.vim/skeleton/skeleton..cpp
-	autocmd BufNewFile *.*.cpp	%s/skeleton/\=expand('%:t:r:r')/g
-	autocmd BufNewFile *.*.cpp	Stdheader
-endfunction
-

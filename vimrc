@@ -24,22 +24,17 @@ call	Shortcut_insert()
 call	Shortcut_virtual()
 call	Shortcut_commentary()
 
-
 "New cpp files
+"New cpp + hpp files
 source ~/.vim/function/new_files/cpp.vimrc
-if _cpp_structor() && _cpp_operator() && _cpp_member()
-	call _cpp_other()
-endif
-call _cpp_main()
-call _cpp_hpp()
+call _cpp_and_hpp()
 
 "New Makefile
-source ~/.vim/function/new_files/Makefile.vimrc
-call _make_cpp()
-call _make_c()
+source ~/.vim/function/new_files/make.vimrc
+call _makefile()
 
 "New bash script files
 source ~/.vim/function/new_files/bash.vimrc
-if _script_test()
-	call _script()
-endif
+call _bash_script()
+
+autocmd BufNewfile *	Stdheader

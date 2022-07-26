@@ -92,7 +92,6 @@ DEFINES_DIR=$INC_DIR"defines/"
 FUNCTIONS_DIR=$INC_DIR"functions/"
 TEMPLATES_DIR=$INC_DIR"templates/"
 SRCS_DIR=$ROOT"srcs/"
-MAKEFILE=$ROOT"makecpp"
 MAIN_FILE=$SRCS_DIR"main.cpp"
 
 FNX_DIR=fnx_cpp/
@@ -102,6 +101,7 @@ FNX_CPP_REPO=git@github.com:rgeny/fnx_cpp.git
 NEW_DIR="mkdir -p"
 NEW_FILE="vim -c wq"
 CLONE="git clone"
+MAKEFILE="makecpp"
 
 ############################################################
 ########################## PROG ############################
@@ -113,11 +113,12 @@ $NEW_DIR $DEFINES_DIR
 $NEW_DIR $FUNCTIONS_DIR
 $NEW_DIR $TEMPLATES_DIR
 $NEW_DIR $SRCS_DIR
-if [ ! -e $ROOT"Makefile" ]
-then
-	$NEW_FILE $MAKEFILE
-	mv Makefile $ROOT 2>/dev/null
-fi
+makecpp $ROOT
+#if [ ! -e $ROOT"Makefile" ]
+#then
+#	$NEW_FILE $MAKEFILE
+#	mv Makefile $ROOT 2>/dev/null
+#fi
 #	$NEW_FILE $MAKEFILE
 #mv Makefile $ROOT
 $NEW_FILE $MAIN_FILE

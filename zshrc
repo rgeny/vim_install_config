@@ -102,3 +102,5 @@ source $ZSH/oh-my-zsh.sh
 alias newcpp="~/.script/newcpp.sh"
 alias newc="mkdir includes srcs; vim -c wq makec; vim -c wq srcs/main.c"
 alias newcppclass="~/.script/newcppclass.sh"
+alias makecpp="~/.script/Makefile.sh cpp"
+alias makec="~/.script/Makefile.sh c"
