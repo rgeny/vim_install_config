@@ -35,6 +35,6 @@ call _makefile()
 
 "New bash script files
 source ~/.vim/function/new_files/bash.vimrc
-call _bash_script()
-
-autocmd BufNewfile *	Stdheader
+if _bash_script()
+	autocmd BufNewfile *	Stdheader
+endif
