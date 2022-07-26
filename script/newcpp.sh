@@ -114,13 +114,7 @@ $NEW_DIR $FUNCTIONS_DIR
 $NEW_DIR $TEMPLATES_DIR
 $NEW_DIR $SRCS_DIR
 makecpp $ROOT
-#if [ ! -e $ROOT"Makefile" ]
-#then
-#	$NEW_FILE $MAKEFILE
-#	mv Makefile $ROOT 2>/dev/null
-#fi
-#	$NEW_FILE $MAKEFILE
-#mv Makefile $ROOT
+
 $NEW_FILE $MAIN_FILE
 
 if [ ! -e $FNX_DIR ]
