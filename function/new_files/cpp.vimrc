@@ -6,12 +6,12 @@
 "    By: rgeny <marvin@42.fr>                       +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2022/07/26 12:32:34 by rgeny             #+#    #+#              "
-"    Updated: 2022/07/26 12:32:35 by rgeny            ###   ########.fr        "
+"    Updated: 2022/07/27 15:06:35 by rgeny            ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
 function _cpp_and_hpp()
-	if expand ('%:t:e:e:e')=="hpp"
+	if expand ('%:t:e:e')=="hpp"
 		autocmd BufNewFile *	0r ~/.vim/skeleton/skeleton.hpp
 	elseif expand ('%:t:e:e')=="structor.cpp"
 		autocmd BufNewfile *	0r ~/.vim/skeleton/skeleton.structor.cpp
@@ -26,7 +26,7 @@ function _cpp_and_hpp()
 	else
 		autocmd BufNewfile *.*.cpp	0r ~/.vim/skeleton/skeleton..cpp
 	endif
-	if expand ('%:t:e:e')=="*.hpp" || expand ('%:t:e:e')=="*.cpp"
+	if expand ('%:t:e:e')=="hpp" || expand ('%:t:e:e')=="cpp"
 		autocmd BufNewfile *	%s/SKELETON/\=toupper(expand('%:t:r'))/g
 		autocmd BufNewFile *	%s/skeleton/\=expand('%:t:r')/g
 	endif
