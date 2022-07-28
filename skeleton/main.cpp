@@ -1,3 +1,4 @@
+#include <iostream>
 #include <cstdlib>
 
 int	main	( __attribute((unused)) int argc
