@@ -104,3 +104,4 @@ alias newc="mkdir includes srcs; vim -c wq makec; vim -c wq srcs/main.c"
 alias newcppclass="~/.script/newcppclass.sh"
 alias makecpp="~/.script/Makefile.sh cpp"
 alias makec="~/.script/Makefile.sh c"
+export USER=rgeny MAIL=rgeny@student.42.fr
