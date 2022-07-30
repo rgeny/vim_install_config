@@ -6,7 +6,7 @@
 "    By: rgeny <marvin@42.fr>                       +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2022/07/26 12:32:34 by rgeny             #+#    #+#              "
-"    Updated: 2022/07/27 15:06:35 by rgeny            ###   ########.fr        "
+"    Updated: 2022/07/30 13:28:09 by rgeny            ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -26,8 +26,7 @@ function _cpp_and_hpp()
 	else
 		autocmd BufNewfile *.*.cpp	0r ~/.vim/skeleton/skeleton..cpp
 	endif
-	if expand ('%:t:e:e')=="hpp" || expand ('%:t:e:e')=="cpp"
-		autocmd BufNewfile *	%s/SKELETON/\=toupper(expand('%:t:r'))/g
-		autocmd BufNewFile *	%s/skeleton/\=expand('%:t:r')/g
-	endif
+	autocmd BufNewfile *.hpp	%s/SKELETON/\=toupper(expand('%:t:r'))/g
+	autocmd BufNewFile *.hpp	%s/skeleton/\=expand('%:t:r')/g
+	autocmd BufNewFile *.*.cpp	%s/skeleton/\=expand('%:t:r:r')/g
 endfunction
