@@ -35,7 +35,10 @@ DEPS				= $(OBJS:.o=.d)
 EXE					= exe
 FNX_LIB				= fnxlib.a
 
-all					: $(FNX_LIB) $(EXE)
+all					: $(OBJS_DIR) $(FNX_LIB) $(EXE)
+
+$(OBJS_DIR)			:
+					$(NEW_DIR) $@
 
 $(FNX_LIB)			:
 					$(MAKE_OTHER_DIR) $(FNX_DIR)
@@ -44,7 +47,6 @@ $(EXE)				: $(OBJS)
 					$(CC) $(COMPILE_FLAG) $^ $(FNX_DIR)$(FNX_LIB) -o $@
 
 $(OBJS_DIR)%.o		: %.cpp
-					$(NEW_DIR) $(OBJS_DIR)
 					$(CC) $(COMPILE_FLAG) -c $< $(INCLUDES_FLAG) -o $@
 
 clean				:

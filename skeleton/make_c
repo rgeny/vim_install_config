@@ -20,13 +20,15 @@ DEPS				= $(OBJS:.o=.d)
 
 EXE					= exe
 
-all					: $(EXE)
+all					: $(OBJS_DIR) $(EXE)
+
+$(OBJS_DIR)			:
+					$(NEW_DIR) $@
 
 $(EXE)				: $(OBJS)
 					$(CC) $(COMPILE_FLAG) $^ -o $@
 
 $(OBJS_DIR)%.o		: %.c
-					$(NEW_DIR) $(OBJS_DIR)
 					$(CC) $(COMPILE_FLAG) -c $< $(INCLUDES_FLAG) -o $@
 
 clean				:
