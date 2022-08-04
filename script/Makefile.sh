@@ -68,7 +68,7 @@ then
 	printf $RED"Program requires only 2 arguments :\n"$RESET
 	printf "./Makefile.sh makefile_type root\n"
 	exit 2
-elif [ -e "Makefile" ]
+elif [ -e $2"Makefile" ]
 then
 	printf $RED"Makefile already exist !\n"$RESET
 	exit 2
