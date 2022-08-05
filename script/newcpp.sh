@@ -96,6 +96,7 @@ MAIN_FILE=$SRCS_DIR"main.cpp"
 
 FNX_DIR=fnx_cpp/
 FNX_CPP_REPO=git@github.com:rgeny/fnx_cpp.git
+FNX_CPP_REPO_NAME=${ROOT}fnx_cpp
 
 #	CMD
 NEW_DIR="mkdir -p"
@@ -119,5 +120,5 @@ $NEW_FILE $MAIN_FILE
 
 if [ ! -e $FNX_DIR ]
 then
-	$CLONE $FNX_CPP_REPO
+	$CLONE $FNX_CPP_REPO $FNX_CPP_REPO_NAME
 fi
