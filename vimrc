@@ -24,7 +24,6 @@ call	Shortcut_insert()
 call	Shortcut_virtual()
 call	Shortcut_commentary()
 
-"New cpp files
 "New cpp + hpp files
 source ~/.vim/function/new_files/cpp.vimrc
 call _cpp_and_hpp()
@@ -35,6 +34,7 @@ call _makefile()
 
 "New bash script files
 source ~/.vim/function/new_files/bash.vimrc
-if _bash_script()
+source ~/.vim/function/new_files/git.vimrc
+if _bash_script() && _gitignore()
 	autocmd BufNewfile *	Stdheader
 endif

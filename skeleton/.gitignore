@@ -1,0 +1,50 @@
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+
+# vim file
+*.swp
+
+# tests files
+./tests/fnx_cpp
+./tests/includes
+./tests/srcs
+test.cpp
+
+# logs
+*.err
+*.res
+logs
+
+# Temporary files
+*.tmp
