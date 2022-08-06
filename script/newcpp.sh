@@ -93,6 +93,7 @@ FUNCTIONS_DIR=$INC_DIR"functions/"
 TEMPLATES_DIR=$INC_DIR"templates/"
 SRCS_DIR=$ROOT"srcs/"
 MAIN_FILE=$SRCS_DIR"main.cpp"
+CUR_DIR=$(cd $ROOT; pwd)
 
 FNX_DIR=fnx_cpp/
 FNX_CPP_REPO=git@github.com:rgeny/fnx_cpp.git
@@ -118,7 +119,12 @@ makecpp $ROOT
 
 $NEW_FILE $MAIN_FILE
 
-if [ ! -e $FNX_DIR ]
+if [[ "$CUR_DIR" == *"fnx_cpp" ]]
+then
+	printf "Can't clone fnx_cpp repo in fnx_cpp repo\n"
+elif [ ! -e $FNX_CPP_REPO_NAME ]
 then
 	$CLONE $FNX_CPP_REPO $FNX_CPP_REPO_NAME
+else
+	printf "fnx_cpp already cloned\n"
 fi
