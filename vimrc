@@ -9,6 +9,8 @@ set nocompatible
 set	showmatch
 set	incsearch
 set hidden
+setlocal foldmethod=marker
+setlocal foldmarker=#ifdef\ __DEBUG__,#endif
 
 let c='a'
 while c < 'z'
