@@ -6,11 +6,14 @@ ZSHRC_DIR=~/.zshrc
 cp -r vimrc ~/.vimrc
 cp -r function ~/.vim/
 cp -r skeleton ~/.vim/
-cp -r bashrc ~/.bashrc
-cp -r zshrc ~/.zshrc
 
-mkdir -p ~/.script
-cp -r script/* ~/.script/
+if [ "$1" == "all" ]
+then
+	cp -r bashrc ~/.bashrc
+	cp -r zshrc ~/.zshrc
+	mkdir -p ~/.script
+	cp -r script/* ~/.script/
+fi
 
 #function add_cmd_zshrc()
 #{
