@@ -10,7 +10,7 @@ set	showmatch
 set	incsearch
 set hidden
 setlocal foldmethod=marker
-setlocal foldmarker=#ifdef\ __DEBUG__,#endif
+setlocal foldmarker=ifdef\ __DEBUG__,endif
 hi Folded ctermbg=232
 
 let c='a'
