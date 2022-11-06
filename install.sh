@@ -4,6 +4,7 @@
 ZSHRC_DIR=~/.zshrc
 
 cp -r vimrc ~/.vimrc
+mkdir -p ~/.vim/
 cp -r function ~/.vim/
 cp -r skeleton ~/.vim/
 
