@@ -38,6 +38,6 @@ call _makefile()
 "New bash script files
 source ~/.vim/function/new_files/bash.vimrc
 source ~/.vim/function/new_files/git.vimrc
-if _bash_script() && _gitignore()
-	autocmd BufNewfile *	Stdheader
-endif
+"if _bash_script() && _gitignore()
+"	autocmd BufNewfile *	Stdheader
+"endif

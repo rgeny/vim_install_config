@@ -13,6 +13,6 @@
 function _makefile()
 	autocmd BufNewFile makec	0r ~/.vim/skeleton/make_c
 	autocmd BufNewFile makecpp	0r ~/.vim/skeleton/make_cpp
-	autocmd BufNewFile make*	Stdheader
+"	autocmd BufNewFile make*	Stdheader
 	autocmd BufNewFile make*	:wq!
 endfunction
