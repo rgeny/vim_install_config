@@ -1,9 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 
-int	main	( __attribute((unused)) int argc
-			, __attribute((unused)) char ** argv
-			, __attribute((unused)) char ** envp)
+int	main	(void)
 {
 	
 	return (EXIT_SUCCESS);
