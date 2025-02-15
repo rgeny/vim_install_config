@@ -23,6 +23,7 @@ function _cpp_and_hpp()
 		autocmd BufNewfile *	0r ~/.vim/skeleton/main.c
 	elseif expand ('%:t')=="main.cpp"
 		autocmd BufNewfile *	0r ~/.vim/skeleton/main.cpp
+		autocmd BufNewfile *	6
 	else
 		autocmd BufNewfile *.*.cpp	0r ~/.vim/skeleton/skeleton..cpp
 	endif
