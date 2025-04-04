@@ -3,8 +3,8 @@ set mouse=a
 set linebreak
 set hls
 set nu
-set shiftwidth=4
-set tabstop=4
+set shiftwidth=2
+set tabstop=2
 set nocompatible
 set	showmatch
 set	incsearch
