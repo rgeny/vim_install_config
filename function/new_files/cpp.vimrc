@@ -19,6 +19,8 @@ function _cpp_and_hpp()
 		autocmd BufNewfile *	0r ~/.vim/skeleton/skeleton.operator.cpp
 	elseif expand ('%:t:e:e')=="member.cpp"
 		autocmd BufNewfile *	0r ~/.vim/skeleton/skeleton.member.cpp
+	elseif expand ('%:t:e')=="cpp"
+		autocmd BufNewFile *	0r ~/.vim/skeleton/skeleton.cpp
 	elseif expand ('%:t')=="main.c"
 		autocmd BufNewfile *	0r ~/.vim/skeleton/main.c
 	elseif expand ('%:t')=="main.cpp"
@@ -29,5 +31,9 @@ function _cpp_and_hpp()
 	endif
 	autocmd BufNewfile *.hpp	%s/SKELETON/\=toupper(expand('%:t:r'))/g
 	autocmd BufNewFile *.hpp	%s/skeleton/\=expand('%:t:r')/g
-	autocmd BufNewFile *.*.cpp	%s/skeleton/\=expand('%:t:r:r')/g
+	if expand ('%:t:e')=="cpp"
+		autocmd BufNewFile * %s/skeleton/\=expand('%:t:r')/g
+	else
+		autocmd BufNewFile *.*.cpp	%s/skeleton/\=expand('%:t:r:r')/g
+	endif
 endfunction

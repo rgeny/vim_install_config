@@ -1,20 +1,32 @@
 #ifndef SKELETON_HPP
 # define SKELETON_HPP
 
-# include <iostream>
 
-class skeleton
+
+namespace fnx
 {
-	public:
-		skeleton	(void);
-		skeleton	(skeleton const & src);
-		~skeleton	(void);
+	class skeleton
+	{
+//CTOR
+		public:
+			skeleton	(void);
+			skeleton	(skeleton const & src);
 
-		skeleton &	operator=	(skeleton const & src);
+//DTOR
+		public
+			~skeleton	(void);
 
-		void	print_data	(void) const;
+//OPERATOR
+		public:
+			skeleton &	operator=	(skeleton const & src);
 
-	private:
+//PUBLIC_MEMBER
+		public:
+
+//PRIVATE_MEMBER
+		private:
+
+	};
 };
 
 #endif
