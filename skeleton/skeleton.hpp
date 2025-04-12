@@ -13,7 +13,7 @@ namespace fnx
 			skeleton	(skeleton const & src);
 
 //DTOR
-		public
+		public:
 			~skeleton	(void);
 
 //OPERATOR
