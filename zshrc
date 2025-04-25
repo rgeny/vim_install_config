@@ -109,7 +109,7 @@ tabs -2
 
 git()
 {
-	if [[ "$1" == "clone"]];
+	if [[ "$1" == "clone"]]
 	then
 		shift
 		command git clone --recurse-submodules "$@"
