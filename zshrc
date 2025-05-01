@@ -117,3 +117,13 @@ git()
 		command git "$@"
 	fi
 }
+sudo()
+{
+	if [[ "$1" == "vim" ]];
+	then
+		shift
+		command sudo -E vim "$@"
+	else
+		command sudo "$@"
+	fi
+}
