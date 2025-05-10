@@ -7,6 +7,7 @@ cp -r vimrc ~/.vimrc
 mkdir -p ~/.vim/
 cp -r function ~/.vim/
 cp -r skeleton ~/.vim/
+cp -r pack ~/.vim/
 
 if [ "$1" == "all" ]
 then
