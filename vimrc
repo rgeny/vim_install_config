@@ -5,7 +5,7 @@ set hls
 set nu
 set shiftwidth=2
 set tabstop=2
-set textwidth=120
+set textwidth=100
 set nocompatible
 set	showmatch
 set	incsearch
