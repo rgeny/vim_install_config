@@ -42,3 +42,5 @@ source ~/.vim/function/new_files/git.vimrc
 "if _bash_script() && _gitignore()
 "	autocmd BufNewfile *	Stdheader
 "endif
+
+source ~/.vim/function/Opaque_object_manager_base.vimrc
