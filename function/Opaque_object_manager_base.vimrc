@@ -91,6 +91,7 @@ function _opaque_object_manager_base()
 		\ "				_Info_typedef;",
 		\ "", "", "",
 		\ "		public:",
+		\ "			using _Opaque_object_manager_base::create;",
 		\ "			fnx::Result init_info	(Create_dependencies_typedef const& create_dependencies);",
 		\ "			fnx::Result create	(Handle_typedef const& handle);",
 		\ "			void				destroy	(Handle_typedef const& handle);",
