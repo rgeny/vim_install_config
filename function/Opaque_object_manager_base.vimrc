@@ -1,4 +1,4 @@
-function _opaque_object_manager_base()
+function _opaque_object_manager_base_hpp()
 	let l:filename = expand('%:t:r')
 	let l:capitalized = toupper(strpart(l:filename, 0, 1)) . strpart(l:filename, 1)
 	let l:trait_name = l:capitalized . "_traits"
@@ -51,7 +51,8 @@ function _opaque_object_manager_base()
 		\ "		public:",
 		\ "			struct Data",
 		\ "			{",
-		\ "				",
+		\ "				flnx::" . l:capitalized . "::Create_info					create_info{};",
+		\ "				flnx::" . l:capitalized . "::Create_dependencies	create_dependencies{};",
 		\ "			};",
 		\ "",
 		\ "		private:",
@@ -91,10 +92,10 @@ function _opaque_object_manager_base()
 		\ "				_Info_typedef;",
 		\ "", "", "",
 		\ "		public:",
-		\ "			using _Opaque_object_manager_base::create;",
+		\ "			using _Opaque_object_manager_base_typedef::create;",
 		\ "			fnx::Result init_info	(Create_dependencies_typedef const& create_dependencies);",
 		\ "			fnx::Result create	(Handle_typedef const& handle);",
-		\ "			void				destroy	(Handle_typedef const& handle);",
+		\ "			fnx::Result	destroy	(Handle_typedef const& handle);",
 		\ "		private:",
 		\ "			fnx::Result _evaluate_create_info_change",
 		\ "				(Create_info_typedef const& old_create_info",
@@ -102,4 +103,60 @@ function _opaque_object_manager_base()
 		\ "", "", ""
 		\ ])
 		call deletebufline('%', line('.'), line('.') + 1)
+endfunction
+
+function _opaque_object_manager_base_cpp()
+	let l:filename = expand('%:t:r')
+	let l:capitalized = toupper(strpart(l:filename, 0, 1)) . strpart(l:filename, 1)
+	call append(line('.') - 1, [
+		\ "fnx::Result flnx::" . l:capitalized . "::init_info",
+		\ "	(flnx::" . l:capitalized . "::Create_dependencies_typedef const& create_dependencies)",
+		\ "{",
+		\ "	if	(create_dependencies.is_valid() != fnx::Result::SUCCESS)",
+		\ "		return	(create_dependencies.is_valid());",
+		\ "	if	(this->_info.has_value())",
+		\ "		return	(fnx::Result::SUCCESS)",
+		\ "",
+		\ "	flnx::" . l:capitalized . "::Info_typedef	info{};",
+		\ "	this->_info	= info;",
+		\ "",
+		\ "	return	(fnx::Result::SUCCESS);",
+		\ "}",
+		\ "",
+		\ "fnx::Result flnx::" . l:capitalized . "::create	(flnx::" . l:capitalized . "::Handle_typedef const& handle)",
+		\ "{",
+		\ "	if	(this->_data_map.find(handle) == this->_data_map.end())",
+		\ "		return	(fnx::Result::INVALID_HANDLE);",
+		\ "",
+		\ "	flnx::" . l:capitalized . "::_Data_typedef& data	= this->_data_map.find(handle)->second;",
+		\ "	(void)data;",
+		\ "",
+		\ "	return	(fnx::Result::SUCCESS);",
+		\ "}",
+		\ "",
+		\ "fnx::Result flnx::" . l:capitalized . "::destroy	(flnx::" . l:capitalized . "::Handle_typedef const& handle)",
+		\ "{",
+		\ "	typename flnx::" . l:capitalized . "::_Data_map_typedef::iterator it	=	this->_data_map.find(handle);",
+		\ "",
+		\ "	if	(it == this->_data_map.end())",
+		\ "		return	(fnx::Result::INVALID_HANDLE);",
+		\ "",
+		\ "	",
+		\ "}",
+		\ "",
+		\ "fnx::Result flnx::" . l:capitalized . "::_evaluate_create_info_change",
+		\ "	(flnx::" . l:capitalized . "::Create_info_typedef const& old_create_info",
+		\ "	,flnx::" . l:capitalized . "::Create_info_typedef const& new_create_info) const",
+		\ "{",
+		\ "	if	(!this->_info.has_value())",
+		\ "		return	(fnx::Result::INFO_NOT_INITIALIZED);",
+		\ "	if	(new_create_info.is_valid	(*this->_info) != fnx::Result::SUCCESS",
+		\ "		|| old_create_info.is_valid	(*this->_info) != fnx::Result::SUCCESS)",
+		\ "	{",
+		\ "		return	(fnx::Result::INVALID_CREATE_INFO);",
+		\ "	}",
+		\ "	return	(fnx::Result::SUCCCESS);",
+		\ "}",
+		\ ""
+		\ ])
 endfunction
