@@ -3,7 +3,7 @@
 
 
 
-namespace fnx
+namespace flnx
 {
 	class skeleton
 	{
