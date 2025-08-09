@@ -12,16 +12,24 @@ namespace flnx
 			skeleton	(void);
 			skeleton	(skeleton const & src);
 
+
+
 //DTOR
 		public:
 			~skeleton	(void);
+ 
+
 
 //OPERATOR
 		public:
 			skeleton &	operator=	(skeleton const & src);
 
+
+
 //PUBLIC_MEMBER
 		public:
+
+
 
 //PRIVATE_MEMBER
 		private:
