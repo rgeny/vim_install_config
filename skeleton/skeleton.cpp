@@ -3,31 +3,49 @@
 
 
 //CTOR
-flnx::skeleton::skeleton	(void)
-{
-}
-
-flnx::skeleton::skeleton	(flnx::skeleton const& src)
-{
-	(void)src;
-}
+//flnx::skeleton::skeleton
+//	(void)	noexcept
+//{
+//}
+//
+//flnx::skeleton::skeleton
+//	(flnx::skeleton const& src)	noexcept
+//{
+//	(void)src;
+//}
+//
+//flnx::skeleton::skeleton
+//	(flnx::skeleton&& src)	noexcept
+//{
+//	(void)src;
+//}
 
 
 
 //DTOR
-flnx::skeleton::~skeleton	(void)
-{
-}
+//flnx::skeleton::~skeleton
+//	(void)	noexcept
+//{
+//}
 
 
 
 //OPERATOR
-flnx::skeleton&	flnx::skeleton::operator=	(flnx::skeleton const& src)
-{
-	(void)src;
-
-	return (*this);
-}
+//constexpr flnx::skeleton&	flnx::skeleton::operator=
+//	(flnx::skeleton const& src)	noexcept
+//{
+//	(void)src;
+//
+//	return	(*this);
+//}
+//
+//constexpr flnx::skeleton&	flnx::skeleton::operator=
+//	(flnx::skeleton&& src)	noexcept
+//{
+//	(void)src;
+//
+//	return	(*this);
+//}
 
 
 
