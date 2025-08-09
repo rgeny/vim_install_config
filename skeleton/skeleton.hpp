@@ -22,7 +22,7 @@ namespace flnx
 
 //OPERATOR
 		public:
-			skeleton &	operator=	(skeleton const & src);
+			skeleton&	operator=	(skeleton const & src);
 
 
 
