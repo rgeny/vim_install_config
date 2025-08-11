@@ -16,6 +16,7 @@ function Shortcut_insert()
 	inoremap <A-s> <esc>:w<CR>i
 	inoremap <A-r> <esc>:zR<CR>i
 	inoremap <A-f> <esc>:zM<CR>
+	inoremap <expr> @ col('.') == 1 ? '/// @' : '@'
 endfunction
 
 function Shortcut_virtual()
